@@ -8,10 +8,13 @@
         "default_popup": "index.html",
         "default_title": "Subreddit Blocker"
     },
+    "permissions": [
+        "storage"
+    ],
     "content_scripts": [
         {
           "matches": ["https://www.reddit.com/*"],
-          "js": ["script.js"]
+          "js": ["remove-subreddit-card.js"]
         }
       ]
 }

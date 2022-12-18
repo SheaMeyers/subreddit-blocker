@@ -1,4 +1,4 @@
-async function execute() {
+const execute = () => {
     setTimeout(() => {
         console.log('Trying to hide')
         var els = document.querySelectorAll("a[href='/r/aww/']")
