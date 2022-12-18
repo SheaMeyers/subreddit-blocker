@@ -15,10 +15,7 @@ const setSubredditList = (subreddits) => {
             li.innerHTML = subreddit
             let button = document.createElement("button")
             button.innerHTML = "X"
-            //button.onclick = removeSubredditFromList(subreddit)
-            button.onclick = function() {
-                removeSubredditFromList(subreddit)
-            }
+            button.onclick = () => removeSubredditFromList(subreddit)
             li.appendChild(button)
             ul.appendChild(li)
         })
