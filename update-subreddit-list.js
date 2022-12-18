@@ -1,14 +1,15 @@
 const removeSubredditFromList = (subreddit) => {
     chrome.storage.local.get("subreddits", (result) => {
-        let subRedditsArray = result.subreddits.split(',')
-        subRedditsArray = subRedditsArray.filter(s => s !== subreddit)
-        chrome.storage.local.set({ "subreddits": subRedditsArray.join(',')  }, () =>  setCurrentSubredditList());
+        chrome.storage.local.set(
+            { "subreddits": result.subreddits.split(',').filter(s => s !== subreddit).join(',')  }, 
+            () =>  setCurrentSubredditList()
+        );
     }); 
 }
 
 const setSubredditList = (subreddits) => {
-    var ul = document.getElementById("subreddits-list")
     if (subreddits) {
+        var ul = document.getElementById("subreddits-list")
         ul.innerHTML = ""
         subreddits.split(',').forEach(subreddit => {
             let li = document.createElement("li")
@@ -30,9 +31,11 @@ const setCurrentSubredditList = () => {
 }
 
 const addToList = () => {
-    const name = document.getElementById('subreddit-input').value
     chrome.storage.local.get("subreddits", (result) => {
-        chrome.storage.local.set({ "subreddits": `${result.subreddits},${name}`  }, () =>  setCurrentSubredditList());   
+        chrome.storage.local.set(
+            { "subreddits": `${result.subreddits},${document.getElementById('subreddit-input').value}`  }, 
+            () =>  setCurrentSubredditList()
+        );   
     }); 
 }
 
