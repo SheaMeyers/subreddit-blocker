@@ -1,0 +1,11 @@
+{
+    "name": "Subreddit Blocker",
+    "version": "0.1.0",
+    "description": "Blocks certain subreddits",
+    "manifest_version": 3,
+    "author": "Shea Meyers",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Subreddit Blocker"
+    }
+}
