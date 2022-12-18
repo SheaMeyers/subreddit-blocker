@@ -7,7 +7,9 @@ const setCurrentSubredditList = () => {
 
 const addToList = () => {
     const name = document.getElementById('subreddit-input').value
-    chrome.storage.local.set({ "subreddits": name }, () =>  setCurrentSubredditList());    
+    chrome.storage.local.get("subreddits", (result) => {
+        chrome.storage.local.set({ "subreddits": `${result.subreddits},${name}`  }, () =>  setCurrentSubredditList());   
+    }); 
 }
 
 document.getElementById("subreddit-save").addEventListener("click", addToList);
