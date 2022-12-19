@@ -1,7 +1,7 @@
 const execute = () => {
   chrome.storage.local.get("subreddits", (result) => {
     result.subreddits.split(",").forEach((subreddit) => {
-      var els = document.querySelectorAll(`a[href='/r/${subreddit}/']`);
+      var els = document.querySelectorAll(`a[href^='/r/${subreddit}/' i]`);
       els.forEach((el) =>
         el.parentElement.parentElement.parentElement.parentElement.remove()
       );
