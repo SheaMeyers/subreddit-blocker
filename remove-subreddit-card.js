@@ -9,13 +9,13 @@ const execute = () => {
   });
 };
 
-const debounce = (func, timeout = 500) => {
+const debounce = (func) => {
   let timer;
   return (...args) => {
     clearTimeout(timer);
     timer = setTimeout(() => {
       func.apply(this, args);
-    }, timeout);
+    }, 500);
   };
 };
 
