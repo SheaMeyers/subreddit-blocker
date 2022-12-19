@@ -31,9 +31,11 @@ const setCurrentSubredditList = () => {
 }
 
 const addToList = () => {
+    let name = document.getElementById('subreddit-input').value
+    name = name.replace('r/', '').replaceAll('/', '')
     chrome.storage.local.get("subreddits", (result) => {
         chrome.storage.local.set(
-            { "subreddits": `${result.subreddits},${document.getElementById('subreddit-input').value}`  }, 
+            { "subreddits": `${result.subreddits},${name}`  }, 
             () =>  setCurrentSubredditList()
         );   
     }); 
