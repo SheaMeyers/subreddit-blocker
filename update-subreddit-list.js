@@ -14,8 +14,10 @@ const setSubredditList = (subreddits) => {
         subreddits.split(',').forEach(subreddit => {
             let li = document.createElement("li")
             li.innerHTML = subreddit
+            li.classList = "list-group-item d-flex justify-content-between align-items-center"
             let button = document.createElement("button")
             button.innerHTML = "X"
+            button.classList = "btn btn-danger"
             button.onclick = () => removeSubredditFromList(subreddit)
             li.appendChild(button)
             ul.appendChild(li)
