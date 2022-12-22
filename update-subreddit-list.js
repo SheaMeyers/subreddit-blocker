@@ -8,10 +8,10 @@ const removeSubredditFromList = (subreddit) => {
 }
 
 const setSubredditList = (subreddits) => {
-    if (subreddits) {
-        var ul = document.getElementById("subreddits-list")
-        ul.innerHTML = ""
-        subreddits.split(',').forEach(subreddit => {
+    var ul = document.getElementById("subreddits-list")
+    ul.innerHTML = ""    
+    subreddits.split(',').forEach(subreddit => {
+        if(subreddit) {
             let li = document.createElement("li")
             li.innerHTML = subreddit
             li.classList = "list-group-item d-flex justify-content-between align-items-center"
@@ -21,8 +21,8 @@ const setSubredditList = (subreddits) => {
             button.onclick = () => removeSubredditFromList(subreddit)
             li.appendChild(button)
             ul.appendChild(li)
-        })
-    }
+        }
+    })
 }
 
 const setCurrentSubredditList = () => {
@@ -36,8 +36,9 @@ const addToList = () => {
     let name = document.getElementById('subreddit-input').value
     name = name.replace('r/', '').replaceAll('/', '')
     chrome.storage.local.get("subreddits", (result) => {
+        const newSubreddits = result.subreddits ? `${result.subreddits},${name}` : name
         chrome.storage.local.set(
-            { "subreddits": `${result.subreddits},${name}`  }, 
+            { "subreddits": newSubreddits }, 
             () =>  setCurrentSubredditList()
         );   
     }); 
