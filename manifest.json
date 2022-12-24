@@ -1,20 +1,27 @@
 {
-    "name": "Subreddit Blocker",
-    "version": "0.1.0",
-    "description": "Blocks certain subreddits",
     "manifest_version": 3,
-    "author": "Shea Meyers",
+    "name": "Subreddit Blocker",
+    "version": "1.0.0",
     "action":{
-        "default_popup": "index.html",
-        "default_title": "Subreddit Blocker"
+      "default_popup": "index.html",
+      "default_title": "Subreddit Blocker"
     },
+    "icons": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_locale": "en",
+    "description": "Block subreddits",
+    "author": "Shea Meyers",
     "permissions": [
         "storage"
     ],
     "content_scripts": [
         {
           "matches": ["https://www.reddit.com/*"],
-          "js": ["remove-subreddit-card.js"]
+          "js": ["block-subreddit-cards.js"]
         }
       ]
 }
