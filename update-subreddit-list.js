@@ -44,5 +44,6 @@ const addToList = () => {
     }); 
 }
 
+document.getElementById("subreddit-input").addEventListener("keypress", (e) => e.key === "Enter" ? addToList() : null);
 document.getElementById("subreddit-save").addEventListener("click", addToList);
 setCurrentSubredditList()
