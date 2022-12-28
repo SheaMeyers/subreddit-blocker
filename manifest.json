@@ -1,27 +1,30 @@
 {
-    "manifest_version": 3,
-    "name": "Subreddit Blocker",
-    "version": "1.0.0",
-    "action":{
-      "default_popup": "index.html",
-      "default_title": "Subreddit Blocker"
-    },
-    "icons": {
-      "16": "icon16.png",
-      "32": "icon32.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
-    },
-    "default_locale": "en",
-    "description": "Block subreddits from feeds such as /r/all and /r/popular",
-    "author": "Shea Meyers",
-    "permissions": [
-        "storage"
-    ],
-    "content_scripts": [
-        {
-          "matches": ["https://www.reddit.com/*"],
-          "js": ["block-subreddit-cards.js"]
-        }
-      ]
+  "manifest_version": 3,
+  "name": "Subreddit Blocker",
+  "version": "1.0.0",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Subreddit Blocker"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "subredditblocker@gmail.com"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "default_locale": "en",
+  "description": "Block subreddits from feeds such as /r/all and /r/popular",
+  "author": "Shea Meyers",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.reddit.com/*"],
+      "js": ["block-subreddit-cards.js"]
+    }
+  ]
 }
