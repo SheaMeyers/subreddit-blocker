@@ -1,5 +1,3 @@
 # subreddit-blocker
 
-## TODO 
-
-- Ensure manifest json has correct configurations https://developer.chrome.com/docs/extensions/mv3/manifest/
+A simple web extension to block subreddits from feeds such as /r/all and /r/popular
