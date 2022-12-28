@@ -13,7 +13,7 @@
       "128": "icon128.png"
     },
     "default_locale": "en",
-    "description": "Block subreddits",
+    "description": "Block subreddits from feeds such as /r/all and /r/popular",
     "author": "Shea Meyers",
     "permissions": [
         "storage"
