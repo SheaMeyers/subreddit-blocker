@@ -4,6 +4,6 @@ A simple web extension to block subreddits from feeds such as /r/all and /r/popu
 
 ## Releases
 
-Chrome Web Store: https://chrome.google.com/webstore/detail/subreddit-blocker/fdnfhjijilklnkkinbjjhmhjkkkekfcp/related
+Chrome Web Store: https://chrome.google.com/webstore/detail/subreddit-blocker/fdnfhjijilklnkkinbjjhmhjkkkekfcp
 
 Firefox Add-on: https://addons.mozilla.org/en-CA/firefox/addon/subreddit-blocker/
