@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Subreddit Blocker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "action": {
     "default_popup": "index.html",
     "default_title": "Subreddit Blocker"
@@ -23,7 +23,11 @@
   "permissions": ["storage"],
   "content_scripts": [
     {
-      "matches": ["https://www.reddit.com/*"],
+      "matches": [
+        "https://www.reddit.com/",
+        "https://www.reddit.com/r/all/",
+        "https://www.reddit.com/r/popular/"
+      ],
       "js": ["block-subreddit-cards.js"]
     }
   ]
