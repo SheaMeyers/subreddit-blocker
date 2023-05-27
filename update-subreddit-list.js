@@ -36,7 +36,9 @@ const addToList = () => {
     let name = document.getElementById('subreddit-input').value
     name = name.replace('r/', '').replaceAll('/', '')
     chrome.storage.local.get("subreddits", (result) => {
-        const newSubreddits = result.subreddits ? `${result.subreddits},${name}` : name
+        const newSubreddits = result.subreddits ? 
+            result.subreddits.split(',').concat([name]).sort().join(',') : 
+            name
         chrome.storage.local.set(
             { "subreddits": newSubreddits }, 
             () =>  setCurrentSubredditList()
