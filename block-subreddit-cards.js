@@ -1,10 +1,18 @@
 const execute = () => {
   chrome.storage.local.get("subreddits", (result) => {
     result.subreddits.split(",").forEach((subreddit) => {
-      var els = document.querySelectorAll(`a[href^='/r/${subreddit}/' i]`);
-      els.forEach((el) =>
-        el.parentElement.parentElement.parentElement.parentElement.remove()
-      );
+      var link = `r/${subreddit}`
+      var els = document.querySelectorAll(`a[href$='${link}/' i]`);
+      els.forEach((el) => {
+        if (el.innerText.toLowerCase() === link.toLowerCase()) {
+          if (el.href.includes("old.reddit.com")) {
+            el.parentElement.parentElement.parentElement.parentElement.remove()
+          }
+          else {
+            el.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
+          }
+        }
+      });
     });
   });
 };
