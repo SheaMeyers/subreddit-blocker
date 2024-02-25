@@ -1,4 +1,4 @@
-const execute = () => {
+const removeCards = () => {
   chrome.storage.local.get("subreddits", (result) => {
     result.subreddits.split(",").forEach((subreddit) => {
       var link = `r/${subreddit}`
@@ -27,6 +27,7 @@ const debounce = (func) => {
   };
 };
 
-const onNodeInsert = debounce(() => execute());
+const onNodeInsert = debounce(() => removeCards());
 
-document.addEventListener("DOMNodeInsertedIntoDocument", onNodeInsert, true);
+const observer = new MutationObserver(onNodeInsert);
+observer.observe(document.body, { subtree: true, childList: true });
