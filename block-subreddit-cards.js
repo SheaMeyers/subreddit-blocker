@@ -9,7 +9,13 @@ const removeCards = () => {
             el.parentElement.parentElement.parentElement.parentElement.remove()
           }
           else {
-            el.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
+            if (el.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.nodeName === 'SHREDDIT-POST') {
+              // Normal subreddit post
+              el.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
+            } else {
+              // Subreddit post is a link/reference to a blocked subreddit post
+              el.parentElement.parentElement.parentElement.remove()
+            }
           }
         }
       });
