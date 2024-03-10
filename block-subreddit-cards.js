@@ -11,10 +11,19 @@ const removeCards = () => {
           else {
             let pel = el.parentElement
             while (pel) {
+              // Reddit feed has two styles for it's feed.  The style it uses appears to be random
+              // 1. Handles newer style where there is just a border between "cards"
               if (pel.nodeName === 'SHREDDIT-POST') {
                 pel.remove()
                 pel = null
-              } else {
+              } 
+              // 2. Handles older style where each post looks like an actual card
+              else if (pel.dataset.adclicklocation || pel.classList.contains('Post')) {
+                newPel = pel.parentElement
+                pel.remove()
+                pel = newPel
+              } 
+              else {
                 pel = pel.parentElement
               }
             }
