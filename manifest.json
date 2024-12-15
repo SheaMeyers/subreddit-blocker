@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Subreddit Blocker",
-  "version": "1.3.4",
+  "name": "Subreddit Blocker (Test)",
+  "version": "1.3.5",
   "action": {
     "default_popup": "index.html",
     "default_title": "Subreddit Blocker"
@@ -25,11 +25,11 @@
     {
       "matches": [
         "https://www.reddit.com/",
-        "https://www.reddit.com/*",
+        "https://www.reddit.com/?*",
         "https://www.reddit.com/r/all/",
         "https://www.reddit.com/r/popular/",
         "https://old.reddit.com/",
-        "https://old.reddit.com/*",
+        "https://old.reddit.com/?*",
         "https://old.reddit.com/r/all/",
         "https://old.reddit.com/r/popular/"
       ],
