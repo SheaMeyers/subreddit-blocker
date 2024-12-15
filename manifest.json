@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Subreddit Blocker (Test)",
+  "name": "Subreddit Blocker",
   "version": "1.3.5",
   "action": {
     "default_popup": "index.html",
