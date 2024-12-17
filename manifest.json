@@ -27,11 +27,15 @@
         "https://www.reddit.com/",
         "https://www.reddit.com/?*",
         "https://www.reddit.com/r/all/",
+        "https://www.reddit.com/r/all/?*",
         "https://www.reddit.com/r/popular/",
+        "https://www.reddit.com/r/popular/?*",
         "https://old.reddit.com/",
         "https://old.reddit.com/?*",
         "https://old.reddit.com/r/all/",
-        "https://old.reddit.com/r/popular/"
+        "https://old.reddit.com/r/all/?*",
+        "https://old.reddit.com/r/popular/",
+        "https://old.reddit.com/r/popular/?*"
       ],
       "js": ["block-subreddit-cards.js"]
     }
